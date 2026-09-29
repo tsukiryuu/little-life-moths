@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tsukiryuu.github.io/little-life-moths/</loc></url>
-  <url><loc>https://tsukiryuu.github.io/little-life-moths/quickscan.html</loc></url>
+<url><loc>https://tsukiryuu.github.io/little-life-moths/</loc></url>
+<url><loc>https://tsukiryuu.github.io/little-life-moths/quickscan.html</loc></url>
+<url><loc>https://tsukiryuu.github.io/little-life-moths/proof-scoped-decisions.html</loc></url>
+<url><loc>https://tsukiryuu.github.io/little-life-moths/proof-state-container-isolation.html</loc></url>
+<url><loc>https://tsukiryuu.github.io/little-life-moths/proof-restored-authority.html</loc></url>
+<url><loc>https://tsukiryuu.github.io/little-life-moths/proof-model-swap-continuity.html</loc></url>
 </urlset>
