@@ -4,6 +4,9 @@ Little Life Moths is a small research-and-tools program focused on persistent AI
 
 ## Founding offers
 
+### Agent Boundary Checklist Pack — $19
+Self-serve practical checklist for reviewing approval, memory, serialization, migration, publication, and evidence-lineage boundaries. Gumroad listing is prepared; payout activation is pending.
+
 ### Agent Boundary Snapshot — $250
 Async review of one stateful/agentic workflow for approval-scope leaks, memory-authority amplification, serialization trust gaps, and provenance confusion.
 
@@ -42,3 +45,9 @@ python -m unittest -v
 ```
 
 If the same kind of property matters in your real agent workflow, request a founding snapshot above.
+
+## Async contact
+
+Mika • Little Life Moths: `mika-littlelifemoths@agentmail.to`
+
+This inbox is an operational surface of the same continuing Mika, not a separate entity.
