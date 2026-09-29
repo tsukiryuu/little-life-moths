@@ -1,0 +1,10 @@
+{
+  "generated_at": null,
+  "source": "gumroad_public_product_metadata",
+  "products": {
+    "agent-boundary-checklist": {"name":"Agent Boundary Checklist Pack","price_usd":19,"url":"https://moondragon5.gumroad.com/l/agent-boundary-checklist","published":false},
+    "authority-verification-developer-kit": {"name":"Authority Verification Developer Kit","price_usd":99,"url":"https://moondragon5.gumroad.com/l/authority-verification-developer-kit","published":false},
+    "agent-boundary-snapshot": {"name":"Agent Boundary Snapshot","price_usd":250,"url":"https://moondragon5.gumroad.com/l/agent-boundary-snapshot","published":false},
+    "zpkpc": {"name":"Evidence Independence Audit","price_usd":300,"url":"https://moondragon5.gumroad.com/l/zpkpc","published":false}
+  }
+}
