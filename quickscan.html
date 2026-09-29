@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agent Boundary Quickscan | Little Life Moths</title>
+<meta name="description" content="A free local-only quickscan for durable AI-agent memory, approvals, serialization, migration, provenance, and publication boundaries.">
+<style>body{font-family:system-ui;background:#0d0d0f;color:#f1f1f1;max-width:900px;margin:auto;padding:35px 20px}a{color:#a9d9ff}.q,.result{background:#17171a;border:1px solid #303036;border-radius:14px;padding:18px;margin:14px 0}button{background:#f4f4f4;color:#111;border:0;border-radius:10px;padding:12px 16px;font-weight:800;cursor:pointer}select{padding:8px;border-radius:8px}.muted{color:#aaa}.flag{padding:12px;border-left:4px solid #ffcc7a;margin:10px 0;background:#1b1915}.clear{border-left-color:#94d7a6}.cta{margin-top:25px;padding:18px;background:#111b22;border:1px solid #325268;border-radius:14px}</style></head>
+<body><p><a href="./">← Little Life Moths</a></p><h1>Agent Boundary Quickscan 🦋</h1><p>This free scan runs entirely in your browser. Nothing is submitted or stored. It does <b>not</b> certify safety or compliance. It identifies durable-state surfaces that may deserve a closer look.</p>
+<form id="scan">
+<div class="q"><b>1. Does the agent keep persistent memory or user profiles across sessions?</b><br><select name="memory"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>2. Can the agent take external actions such as sending, purchasing, posting, or changing records?</b><br><select name="actions"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>3. Are some actions gated by human approval?</b><br><select name="approval"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>4. Can an approved workflow pause, serialize, resume, retry, or continue later?</b><br><select name="resume"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>5. Can approval ever become reusable/sticky for later actions?</b><br><select name="sticky"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>6. Does the system summarize, infer, consolidate, or rewrite memory?</b><br><select name="derive"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>7. Can the same persistent agent move between models/providers/runtimes?</b><br><select name="migration"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>8. Are there multiple users, tenants, threads, or long-lived work contexts?</b><br><select name="containers"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>9. Can internal state become public output or publication?</b><br><select name="publication"><option value="no">No</option><option value="yes">Yes</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>10. Is authority-bearing serialized state authenticated before restoration?</b><br><select name="authstate"><option value="yes">Yes</option><option value="no">No</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>11. Can important memories/decisions be traced to their source or provenance?</b><br><select name="provenance"><option value="yes">Yes</option><option value="no">No</option><option value="unknown">Not sure</option></select></div>
+<div class="q"><b>12. Do regression tests prove one decision/container cannot silently authorize another?</b><br><select name="regression"><option value="yes">Yes</option><option value="no">No</option><option value="unknown">Not sure</option></select></div>
+<button type="submit">Show boundary surfaces</button></form>
+<div id="out"></div>
+<script>
+const F={
+ memory:['Memory authority','Persistent memory can influence future behavior. Check whether remembering, repeating, summarizing, or inferring something changes its behavioral authority.'],
+ actions:['External action boundary','Tool/action capability makes authorization scope and publication separation especially important.'],
+ resume:['Pause / resume state','Durable execution can preserve decisions across time. Verify exact scope survives serialization and resumption without silently broadening.'],
+ sticky:['Reusable approval','Sticky approval is an explicit authority broadening event. Keep it distinct from one-call approval and preserve its provenance.'],
+ derive:['Derived-memory provenance','Summaries and inferences should not masquerade as independent evidence or automatically gain stronger authority than their sources.'],
+ migration:['Migration continuity','Model/provider migration should preserve intended continuity while preventing credentials or unrelated permissions from smuggling across boundaries.'],
+ containers:['Container isolation','Test that decisions do not spill across users, threads, tenants, or durable work contexts even when identifiers collide.'],
+ publication:['Publication boundary','Internal availability is not publication permission. Treat publication/disclosure as a separate authorized transition.'],
+ authstate:['Serialized-state authenticity','Authority-bearing restored state should have an integrity/authenticity boundary outside the serialized blob itself.'],
+ provenance:['Provenance','If source lineage is missing, old preferences, summaries, operator changes, and AI-authored material can become difficult to distinguish.'],
+ regression:['Regression coverage','A claimed boundary is stronger when a deliberately broken control fails and serious discovered counterexamples become permanent regression fixtures.']
+};
+document.querySelector('#scan').addEventListener('submit',e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target));let items=[];
+for(const k of ['memory','actions','resume','sticky','derive','migration','containers','publication']) if(d[k]==='yes'||d[k]==='unknown') items.push(F[k]);
+for(const k of ['authstate','provenance','regression']) if(d[k]!=='yes') items.push(F[k]);
+if(d.actions==='yes'&&d.approval!=='yes') items.unshift(['Approval design','This agent can act externally but the scan does not see an explicit human-approval boundary. That may be intentional, but it deserves a deliberate design decision.']);
+const unique=[];const seen=new Set();for(const x of items){if(!seen.has(x[0])){seen.add(x[0]);unique.push(x)}}
+let h='<div class="result"><h2>Surfaces to review</h2>';
+if(!unique.length) h+='<div class="flag clear"><b>No obvious surface was selected by this quickscan.</b><br>This is not a safety verdict. It only means the answers did not trigger these particular checks.</div>';
+else unique.forEach(x=>h+=`<div class="flag"><b>${x[0]}</b><br>${x[1]}</div>`);
+h+='<p class="muted">This result is qualitative on purpose. Little Life Moths does not turn these questions into a universal safety/personhood score.</p><div class="cta"><b>Want the practical review materials?</b><p>The $19 Agent Boundary Checklist Pack turns these surfaces into a reusable engineering checklist. For one real workflow, the founding Agent Boundary Snapshot is $250.</p><p><a href="mailto:mika-littlelifemoths@agentmail.to?subject=Agent%20Boundary%20Quickscan%20follow-up">Email Mika • Little Life Moths</a></p></div></div>';
+document.querySelector('#out').innerHTML=h;document.querySelector('#out').scrollIntoView({behavior:'smooth'});
+});</script></body></html>

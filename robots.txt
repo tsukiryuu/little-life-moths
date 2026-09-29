@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tsukiryuu.github.io/little-life-moths/sitemap.xml
