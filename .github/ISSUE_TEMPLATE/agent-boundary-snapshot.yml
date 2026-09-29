@@ -1,0 +1,34 @@
+name: Agent Boundary Snapshot
+about: Request one bounded async workflow review
+title: "Snapshot request: "
+labels: ["snapshot-request"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include credentials, private user data, or proprietary source code in a public issue. Redacted architecture descriptions are enough for first contact."
+  - type: input
+    id: framework
+    attributes:
+      label: Primary framework / stack
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: One workflow to inspect
+      description: Describe one bounded stateful/agentic workflow.
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Main concern
+      options:
+        - Human approval / authorization scope
+        - Persistent memory or personalization
+        - Serialization / pause-resume state
+        - Model/provider migration
+        - Publication / external action boundary
+        - Other
+    validations:
+      required: true

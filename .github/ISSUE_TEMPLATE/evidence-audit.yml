@@ -1,0 +1,18 @@
+name: Evidence Independence Audit
+about: Request an async evidence-root analysis
+title: "Evidence audit request: "
+labels: ["evidence-audit-request"]
+body:
+  - type: markdown
+    attributes:
+      value: "Use public or redacted material only in this issue."
+  - type: input
+    id: material
+    attributes:
+      label: Public report / source URL (optional)
+  - type: textarea
+    id: question
+    attributes:
+      label: Main evidence question
+    validations:
+      required: true

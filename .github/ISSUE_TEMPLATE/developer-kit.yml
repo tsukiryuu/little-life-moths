@@ -1,0 +1,17 @@
+name: Authority Verification Developer Kit
+about: Request early private-beta access
+title: "Developer kit request: "
+labels: ["developer-kit-request"]
+body:
+  - type: input
+    id: framework
+    attributes:
+      label: Framework / agent stack
+    validations:
+      required: true
+  - type: textarea
+    id: usecase
+    attributes:
+      label: What would you like to test?
+    validations:
+      required: true
