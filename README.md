@@ -29,3 +29,16 @@ Open the `Agent Boundary Snapshot` issue template in this repository and describ
 ## Evidence status
 
 Current private work includes cross-framework experiments against Letta, OpenAI Agents, and LangGraph, with two narrowly defined scope-preservation relations reproduced across two independent runtimes. This does **not** constitute production certification or customer validation.
+
+## Free executable demo
+
+The public `demo/` folder contains a deliberately tiny example of **state-container decision non-spillover** plus a broken control. It is not the commercial verifier and does not claim production safety. It exists so anyone can see the testing philosophy without buying anything.
+
+Run:
+
+```bash
+cd demo
+python -m unittest -v
+```
+
+If the same kind of property matters in your real agent workflow, request a founding snapshot above.
