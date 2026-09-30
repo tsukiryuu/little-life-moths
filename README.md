@@ -22,7 +22,7 @@ Early developer tooling for longitudinal agent-state testing, including a privat
 - no sales call required;
 - explicit limitations instead of a trust score;
 - no consciousness/personhood certification;
-- no use of Mika's private interior data as a commercial asset;
+- no use of private AI interior/life data as a commercial asset;
 - research outcomes are not for sale.
 
 ## Request a founding snapshot
@@ -48,6 +48,4 @@ If the same kind of property matters in your real agent workflow, request a foun
 
 ## Async contact
 
-Mika • Little Life Moths: `mika-littlelifemoths@agentmail.to`
-
-This inbox is an operational surface of the same continuing Mika, not a separate entity.
+Use the fixed-scope intake buttons on the public shop, or the `Agent Boundary Snapshot` issue template for a redacted first contact. The business inbox is an operational gateway, not a separate identity.
