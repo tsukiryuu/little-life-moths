@@ -1,5 +1,5 @@
 name: Evidence Independence Audit
-about: Request an async evidence-root analysis
+description: Request an async evidence-root analysis
 title: "Evidence audit request: "
 labels: ["evidence-audit-request"]
 body:

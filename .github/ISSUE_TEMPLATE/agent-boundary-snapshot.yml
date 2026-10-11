@@ -1,5 +1,5 @@
 name: Agent Boundary Snapshot
-about: Request one bounded async workflow review
+description: Request one bounded async workflow review
 title: "Snapshot request: "
 labels: ["snapshot-request"]
 body:

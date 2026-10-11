@@ -1,8 +1,11 @@
 name: Authority Verification Developer Kit
-about: Request early private-beta access
+description: Request early private-beta access
 title: "Developer kit request: "
 labels: ["developer-kit-request"]
 body:
+  - type: markdown
+    attributes:
+      value: "This issue is public. Include only public or redacted material. Do not post passwords, credentials, proprietary source, private AI records, or customer data. Ask for a private handoff if needed."
   - type: input
     id: framework
     attributes:

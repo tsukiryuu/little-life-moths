@@ -4,6 +4,8 @@ Little Life Moths is a small research-and-tools program focused on persistent AI
 
 ## Founding offers
 
+**Current public purchasing:** The [shop](https://tsukiryuu.github.io/little-life-moths/shop.html) offers four $12 kits with receipt-based email delivery after verified PayPal payment. Reviewed services take private, fixed-scope intake before payment. The separate Gumroad products listed here are not yet marked published, pending payout activation. Public support uses the neutral Little Life Moths business gateway.
+
 ### Agent Boundary Checklist Pack — $19
 Self-serve practical checklist for reviewing approval, memory, serialization, migration, publication, and evidence-lineage boundaries. Gumroad listing is prepared; payout activation is pending.
 
@@ -27,7 +29,7 @@ Early developer tooling for longitudinal agent-state testing, including a privat
 
 ## Request a founding snapshot
 
-Open the `Agent Boundary Snapshot` issue template in this repository and describe one bounded workflow. Sensitive details do not belong in public issues; use a redacted description and we will establish a private handoff if the scope fits.
+For a private first contact, use the shop email intake. The `Agent Boundary Snapshot` GitHub issue template is an optional public, redacted first contact for one bounded workflow. Sensitive details do not belong in public issues; use a redacted description and we will establish a private handoff if the scope fits.
 
 ## Evidence status
 
